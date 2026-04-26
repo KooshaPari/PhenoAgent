@@ -131,3 +131,7 @@ cargo run -p phenotype-daemon -- --config local.toml
 ## License
 
 Proprietary — Phenotype Ecosystem. Internal use only.
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
