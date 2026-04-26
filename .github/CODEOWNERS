@@ -1,0 +1,13 @@
+# CODEOWNERS — auto-scaffolded 2026-04-27
+# Fallback owner for everything not matched below
+* @KooshaPari
+
+# Governance / CI / docs
+/.github/ @KooshaPari
+/docs/ @KooshaPari
+
+/agentapi/ @KooshaPari
+/pheno-cli/ @KooshaPari
+/phenotype-agent-core/ @KooshaPari
+/phenotype-daemon/ @KooshaPari
+/CLIProxyAPI/ @KooshaPari
