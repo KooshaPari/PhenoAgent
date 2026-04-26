@@ -8,8 +8,12 @@ indent_style = space
 indent_size = 2
 trim_trailing_whitespace = true
 
-[*.{rs,go,py}]
+[*.{rs,py}]
 indent_size = 4
+
+[*.go]
+indent_style = tab
+tab_width = 4
 
 [Makefile]
 indent_style = tab
