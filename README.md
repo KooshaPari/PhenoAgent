@@ -1,5 +1,9 @@
 # PhenoAgent
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Quality Gate](https://github.com/KooshaPari/PhenoAgent/actions/workflows/quality-gate.yml/badge.svg)](https://github.com/KooshaPari/PhenoAgent/actions/workflows/quality-gate.yml)
+[![Rust](https://img.shields.io/badge/rust-1.75%2B-orange.svg)](https://www.rust-lang.org)
+
 Distributed agent orchestration framework with plugin architecture, skill system, and multi-model routing for autonomous agentic workflows across the Phenotype ecosystem.
 
 ## Overview
