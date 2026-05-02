@@ -37,8 +37,9 @@ bytes = { version = "1", features = ["serde"] }
 dashmap = "6"
 arc-swap = "1"
 
-# Reuse phenotype-skills core
-phenotype-skills = { path = "../phenotype-skills" }
+# Local phenotype-skills crate (stub providing core skill types)
+# In full architecture, this would be generated from Python phenotype-skills via PyO3
+phenotype_skills = { path = "../phenotype-skills" }
 
 # Optional: NATS for clustering
 async-nats = { version = "0.35", optional = true }
