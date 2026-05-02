@@ -14,6 +14,12 @@ rust-version = "1.75"
 name = "phenotype-daemon"
 path = "src/main.rs"
 
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+opt-level = 3
+
 [dependencies]
 # Core async runtime
 tokio = { version = "1", features = ["full"] }
