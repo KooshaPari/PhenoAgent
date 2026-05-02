@@ -38,7 +38,7 @@ dashmap = "6"
 arc-swap = "1"
 
 # Reuse phenotype-skills core
-phenotype-skills = { path = "../../phenotype-skills" }
+phenotype-skills = { path = "../phenotype-skills" }
 
 # Optional: NATS for clustering
 async-nats = { version = "0.35", optional = true }
