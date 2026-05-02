@@ -1,8 +1,7 @@
-[version]
-version = 2
+# Phenotype PhenoAgent — Cargo Deny Configuration
+# https://github.com/KooshaPari/PhenoAgent
 
 [licenses]
-version = 2
 allow = [
     "MIT",
     "Apache-2.0",
