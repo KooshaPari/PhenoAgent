@@ -1,5 +1,5 @@
 //! RPC request handlers for phenotype-daemon
-//! 
+//!
 //! Optimized implementation with:
 //! - DashMap for lock-free registry reads
 //! - Buffer pooling for reduced allocations
@@ -9,7 +9,9 @@
 use bytes::{BufMut, BytesMut};
 use dashmap::DashMap;
 use phenotype_skills::{DependencyResolver, Skill, SkillId, SkillRegistry};
+use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
+use std::time::Instant;
 use tokio::sync::RwLock;
 use tracing::{error, trace};
 
