@@ -2,7 +2,7 @@
 
 ## Recent Entries
 
-### %Y->- (HEAD -> pre-extract/tracera-sprawl-commit) — GOVERNANCE
+### 2026-05-06 (HEAD -> main) — GOVERNANCE
 
 **docs(loc): drift report — 14.3M LOC (post-archive), top-10 repos +4.4M net**
 

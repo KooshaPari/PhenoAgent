@@ -46,16 +46,16 @@ An Architecture Decision Record (ADR) is a document that captures an important a
 
 | ADR ID | Title | Status | Date | Owner |
 |--------|-------|--------|------|-------|
-| ADR-001 | Technology Stack Selection | Accepted | 2026-01-15 | Team Lead |
-| ADR-002 | Database Architecture | Accepted | 2026-01-20 | Architect |
-| ADR-003 | API Design Principles | Accepted | 2026-02-01 | API Team |
-| ADR-004 | Authentication and Authorization | Accepted | 2026-02-10 | Security Team |
-| ADR-005 | Deployment Strategy | Accepted | 2026-02-15 | DevOps |
-| ADR-006 | Caching Strategy | Proposed | 2026-03-01 | Performance Team |
-| ADR-007 | Event Sourcing vs CRUD | Accepted | 2026-03-10 | Architecture |
-| ADR-008 | Microservices vs Monolith | Accepted | 2026-03-15 | CTO |
-| ADR-009 | Testing Strategy | Accepted | 2026-03-20 | QA Lead |
-| ADR-010 | Observability and Monitoring | Accepted | 2026-03-25 | SRE Team |
+| ADR-001 | Architecture Approach | Accepted | 2026-01-15 | Team Lead |
+| ADR-002 | Technology Selection | Accepted | 2026-01-20 | Architect |
+| ADR-003 | Data Storage Strategy | Accepted | 2026-02-01 | API Team |
+| ADR-004 | API Design Strategy | Accepted | 2026-02-10 | Security Team |
+| ADR-005 | Security Model | Accepted | 2026-02-15 | DevOps |
+| ADR-006 | Caching Strategy | Planned | — | — |
+| ADR-007 | Event Sourcing | Planned | — | — |
+| ADR-008 | Microservices Architecture | Planned | — | — |
+| ADR-009 | Testing Strategy | Planned | — | — |
+| ADR-010 | Observability and Monitoring | Planned | — | — |
 
 ---
 

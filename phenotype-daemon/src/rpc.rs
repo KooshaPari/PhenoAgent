@@ -13,7 +13,7 @@ use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Arc;
 use std::time::Instant;
 use tokio::sync::RwLock;
-use tracing::{error, trace};
+use tracing::{error, trace, warn};
 
 use crate::protocol::{Request, Response, VersionInfo};
 
@@ -60,6 +60,10 @@ pub struct SharedState {
     pub version_info: VersionInfo,
     /// Bytes buffer pool
     pub buffer_pool: Arc<RwLock<BytesPool>>,
+    /// Monotonic timestamp when the daemon started
+    pub started_at: Instant,
+    /// Count of currently active skill sandboxes
+    pub active_sandboxes: Arc<AtomicU64>,
 }
 
 impl SharedState {
@@ -70,7 +74,24 @@ impl SharedState {
             resolver: Arc::new(DependencyResolver::new()),
             version_info: VersionInfo::current(),
             buffer_pool: Arc::new(RwLock::new(BytesPool::new(32))),
+            started_at: Instant::now(),
+            active_sandboxes: Arc::new(AtomicU64::new(0)),
         }
+    }
+
+    /// Register a new sandbox as active
+    pub fn sandbox_register(&self) -> u64 {
+        self.active_sandboxes.fetch_add(1, Ordering::SeqCst) + 1
+    }
+
+    /// Unregister an active sandbox
+    pub fn sandbox_unregister(&self) {
+        self.active_sandboxes.fetch_sub(1, Ordering::SeqCst);
+    }
+
+    /// Current active sandbox count
+    pub fn sandbox_count(&self) -> u64 {
+        self.active_sandboxes.load(Ordering::SeqCst)
     }
 
     /// Get a buffer from the pool
@@ -125,9 +146,9 @@ impl RpcHandler {
                 let registry_size = self.state.registry.len();
                 Response::Stats {
                     total_skills: registry_size,
-                    active_sandboxes: 0, // TODO: Implement sandbox tracking
+                    active_sandboxes: self.state.sandbox_count(),
                     buffer_pool_available: self.buffer_pool.pool.len(),
-                    uptime_seconds: 0, // TODO: Track daemon start time
+                    uptime_seconds: self.state.started_at.elapsed().as_secs(),
                 }
             }
 

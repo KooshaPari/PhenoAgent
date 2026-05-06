@@ -188,4 +188,4 @@ impl VersionInfo {
 pub const DEFAULT_SOCKET_PATH: &str = "/tmp/phenotype-daemon.sock";
 
 /// Default TCP port
-pub const DEFAULT_TCP_PORT: u16 = 8953;
+pub const DEFAULT_TCP_PORT: u16 = 9456;
